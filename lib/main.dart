@@ -228,7 +228,7 @@ void main() async {
   // Load the Amiri font from a URL
   try {
     await FontLoaderService.loadFontFromUrl(
-      fontUrl: 'https://example.com/fonts/Amiri-Regular.ttf', // Replace with actual URL
+      fontUrl: 'https://raw.githubusercontent.com/Sofyan232/QuranFlutter/40098de7ef2b4646d8c8c1b988d4c3298f3297fa/assets/fonts/isepmisbah.ttf', // Replace with actual URL
       fontFamily: 'Misbah',
     );
   } catch (e) {
