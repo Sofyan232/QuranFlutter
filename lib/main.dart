@@ -577,7 +577,7 @@ class _SurahListScreenState extends State<SurahListScreen> {
                         surah.nama,
                         // Use the specified Amiri font from assets
                         style: TextStyle(
-                            fontFamily: 'Amiri', // Specify the font family declared in pubspec
+                            fontFamily: 'Misbah', // Specify the font family declared in pubspec
                             fontSize: 18.0,
                             color: Theme.of(context).colorScheme.primary
                         )
@@ -726,7 +726,7 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
                               child: Text(
                                 'بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ',
                                 style: TextStyle(
-                                    fontFamily: 'Amiri', // Use Amiri font
+                                    fontFamily: 'Misbah', // Use Amiri font
                                     fontSize: settingsProvider.arabicFontSize + 2, // Slightly larger Bismillah
                                     color: Theme.of(context).colorScheme.primary
                                 ),
@@ -840,7 +840,6 @@ class SettingsScreen extends StatelessWidget {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final settingsProvider = Provider.of<SettingsProvider>(context);
     // Determine if the current theme is dark
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
