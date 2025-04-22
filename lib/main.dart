@@ -632,13 +632,25 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
          _surahDetailFuture = _apiService.getSurahDetail(widget.surah.nomor);
      });
      // Handle potential errors when the future completes
-     _surahDetailFuture?.catchError((error) {
+     _surahDetailFuture = _surahDetailFuture?.catchError((error) {
         if (mounted) {
             setState(() {
                 _errorMessage = error.toString();
             });
             print("Error loading detail: $error");
         }
+        // Return a fallback SurahDetail instance
+        return SurahDetail(
+          nomor: 0,
+          nama: '',
+          namaLatin: '',
+          jumlahAyat: 0,
+          tempatTurun: '',
+          arti: '',
+          deskripsi: '',
+          audioFull: {},
+          ayat: [],
+        );
      });
   }
 
