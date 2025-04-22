@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart'; // Import provider
 import 'dart:convert';
 import 'dart:async';
-
+import 'font_loader_service.dart';
 // --- Models ---
 // (Models: Surah, Ayah, SurahDetail remain the same as before)
 // Represents a Surah in the list
@@ -222,7 +222,20 @@ class SettingsProvider extends ChangeNotifier {
 
 // --- Main Application ---
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load the Amiri font from a URL
+  try {
+    await FontLoaderService.loadFontFromUrl(
+      fontUrl: 'https://example.com/fonts/Amiri-Regular.ttf', // Replace with actual URL
+      fontFamily: 'Misbah',
+    );
+  } catch (e) {
+    print('Failed to load font: $e');
+    // Optionally, proceed with a fallback font
+  }
+
   runApp(
     // Provide the state managers to the widget tree
     MultiProvider(
@@ -781,7 +794,7 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
                             Text(
                               ayah.teksArab,
                               style: TextStyle(
-                                  fontFamily: 'Amiri', // Use Amiri font
+                                  fontFamily: 'Misbah', // Use Amiri font
                                   fontSize: settingsProvider.arabicFontSize, // Use size from provider
                                   height: 1.9 // Adjust line height for readability
                                ),
