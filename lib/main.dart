@@ -663,7 +663,7 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
       appBar: AppBar(
         title: Text(
             '${widget.surah.namaLatin} (${widget.surah.nama})',
-             style: TextStyle(fontFamily: 'Amiri', fontSize: 16) // Use Amiri for Arabic in title too
+             style: TextStyle(fontFamily: 'Misbah', fontSize: 16) // Use Amiri for Arabic in title too
         ),
       ),
       body: _buildDetailBody(settingsProvider), // Use helper
@@ -722,7 +722,7 @@ class _SurahDetailScreenState extends State<SurahDetailScreen> {
                           '${surahDetail.namaLatin} (${surahDetail.nama})',
                           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                               fontWeight: FontWeight.bold,
-                              fontFamily: 'Amiri' // Use Amiri for Arabic name here
+                              fontFamily: 'Misbah' // Use Amiri for Arabic name here
                            ),
                         ),
                         SizedBox(height: 8),
